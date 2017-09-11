@@ -110,7 +110,7 @@ VMAP, VAST VRiX
 
 Gomcorp – (https://www.gomcorp.com/) – kuyoungchang@gomcorp.com
 
-[https://github.com/yourname/github-link](https://github.com/dbader/)
+[https://github.com/Gomcorp/VRiX_iOS](https://github.com/Gomcorp/VRiX_iOS)
 
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: LICENSE
