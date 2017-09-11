@@ -106,11 +106,11 @@ VMAP, VAST VRiX
 ```objc
 [self.vrixMananger stopCurrentAD];
 ```
-## Meta
+## License
 
 Gomcorp – (https://www.gomcorp.com/) – kuyoungchang@gomcorp.com
 
-[https://github.com/Gomcorp/VRiX_iOS](https://github.com/Gomcorp/VRiX_iOS)
+Copyright © 2017 Gomcorp.
 
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: LICENSE
