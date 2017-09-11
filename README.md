@@ -1,7 +1,7 @@
 # VRiX
 > 브릭스 광고 출력 라이브러리.
 
-[![License][license-image]][license-url] 
+[![License][license-image][license-url] 
 [![Platform](https://img.shields.io/cocoapods/p/LFAlertController.svg?style=flat)](http://cocoapods.org/pods/LFAlertController)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
@@ -26,8 +26,10 @@ VMAP, VAST VRiX
 
 ## Usage example
 
-```objective c
+1. init
+```objc
 #import <VRiX/VRiXManager.h>
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.vrixMananger = [[VRiXManager alloc] initWithKey:VRIX_KEY hashKey:VRIX_HASHKEY];
@@ -46,90 +48,69 @@ VMAP, VAST VRiX
                     }
                 }];
 }
+```
+2. Play AD
+2.1 Preroll
 
+```objc
 - (void) playPreroll
 {
-NSInteger numberOfPreroll = [_vrixMananger prerollCount];
-if (numberOfPreroll > 0)
-{
-[_adView setHidden:NO];
-[_controlView setHidden:YES];
-
-[_vrixMananger prerollAtView:_adView completionHandler:^{
-//
-[self playMainContent];
-[_playButton setSelected:YES];
-}];
+    NSInteger numberOfPreroll = [_vrixMananger prerollCount];
+    if (numberOfPreroll > 0)
+    {
+        // Play Preroll
+        [_vrixMananger prerollAtView:_adView completionHandler:^{
+            //TODO: preroll광고 끝난후에 처리할 내용을 구현
+        }];
+    }
 }
-else
-{
-[self playMainContent];
-}
-}
-
+```
+2.2 Midroll
+```objc
 - (void) playMidroll
 {
-CGFloat currentTime = CMTimeGetSeconds(_player.currentTime);
+    CGFloat currentTime = CMTimeGetSeconds(_player.currentTime);
 
-//vrix midroll handling
-if([_vrixMananger midrollCount] > 0)
-{
+    //vrix midroll handling
+    if([_vrixMananger midrollCount] > 0)
+    {
+        [_vrixMananger midrollAtView:_adView
+                          timeOffset:currentTime
+                     progressHandler:^(BOOL start, GXAdBreakType breakType, NSAttributedString *message){
+                            //
+                            if (message != nil && breakType == GXAdBreakTypelinear)
+                            {
+                                //TODO: show message
+                            }
 
-
-[_vrixMananger midrollAtView:_adView
-timeOffset:currentTime
-progressHandler:^(BOOL start, GXAdBreakType breakType, NSAttributedString *message)
-{
-//
-if (message != nil && breakType == GXAdBreakTypelinear)
-{
-[_messageLabel setAttributedText:message];
+                            if (start == YES)
+                            {
+                                //TODO: 광고가 시작되었을때 처리
+                            }
+                
+                    }
+                    completionHandler:^(GXAdBreakType breakType){
+                            //TODO: midroll광고가 완료되었때 처리 
+                    }];
+                }
+        }];
+    }
 }
+```
 
-if (start == YES)
-{
-if (breakType == GXAdBreakTypelinear)
-{
-[self playButtonTouched:nil];
-}
-
-[_adView setHidden:NO];
-[_controlView setHidden:YES];
-}
-else
-{
-
-}
-}
-completionHandler:^(GXAdBreakType breakType)
-{
-//
-if (breakType == GXAdBreakTypelinear)
-{
-[self playButtonTouched:nil];
-}
-
-[_adView setHidden:YES];
-[_controlView setHidden:NO];
-
-}];
-}
-}
-
+2.3 Postroll
+```objc
 - (void) playpostroll
 {
-NSInteger numberOfPostroll = [_vrixMananger postrollCount];
-if (numberOfPostroll > 0)
-{
-[_adView setHidden:NO];
-[_controlView setHidden:YES];
+    NSInteger numberOfPostroll = [_vrixMananger postrollCount];
+    if (numberOfPostroll > 0)
+    {
 
-[_vrixMananger postrollAtView:_adView completionHandler:^{
-//TODO:...
-}];
+        [_vrixMananger postrollAtView:_adView completionHandler:^{
+            //TODO:postroll광고 끝난후에 처리할 내용을 구현
+        }];
 }
-}
-사```
+```
 
 ## Contribute
 
