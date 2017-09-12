@@ -16,11 +16,14 @@
 
 - (NSString*)urlEncodedStirngWithStringEncoding:(CFStringEncoding)encoding
 {
-    NSString* encodedUrl = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
-                                                                                                 (CFStringRef)self,
-                                                                                                 NULL,
-                                                                                                 (CFStringRef)@"!*'();:@&=+$,/?%#[]",
-                                                                                                 encoding));
+    NSCharacterSet * queryKVSet = [NSCharacterSet
+                                   characterSetWithCharactersInString:@":/?&=;+!@#$()',*"
+                                   ].invertedSet;
+    
+    NSString * encodedUrl = [self
+                            stringByAddingPercentEncodingWithAllowedCharacters:queryKVSet
+                            ];
+    
     return encodedUrl;
 }
 @end

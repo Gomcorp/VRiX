@@ -18,7 +18,6 @@
 		B3407A951F5FDF9F006FA254 /* VideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3407A941F5FDF9F006FA254 /* VideoPlayerView.m */; };
 		B3407A991F5FE84E006FA254 /* VRiX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3407A911F5FDF6E006FA254 /* VRiX.framework */; };
 		B37808301F6618EC00E419F4 /* NSString+URLEncodedString.m in Sources */ = {isa = PBXBuildFile; fileRef = B378082F1F6618EC00E419F4 /* NSString+URLEncodedString.m */; };
-		B37808321F66376C00E419F4 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B37808311F66376C00E419F4 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -293,7 +292,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B37808321F66376C00E419F4 /* README.md in Sources */,
 				B37808301F6618EC00E419F4 /* NSString+URLEncodedString.m in Sources */,
 				B3407A661F5FDEAC006FA254 /* ViewController.m in Sources */,
 				B3407A631F5FDEAC006FA254 /* AppDelegate.m in Sources */,

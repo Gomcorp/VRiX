@@ -24,13 +24,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FfP-gh-U21" customClass="VideoPlayerView">
-                                <rect key="frame" x="-4" y="0.0" width="383" height="215.5"/>
+                                <rect key="frame" x="-4" y="-20" width="383" height="215.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FfP-gh-U21" secondAttribute="height" multiplier="16:9" id="DZl-c4-hP2"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1op-g5-3SO" userLabel="Message View">
-                                <rect key="frame" x="67" y="140" width="240" height="35"/>
+                                <rect key="frame" x="67" y="120" width="240" height="35"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tbe-in-upC">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="35"/>
@@ -49,14 +49,14 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VkX-6m-Y5e">
-                                <rect key="frame" x="-4" y="0.0" width="383" height="215.5"/>
+                                <rect key="frame" x="-4" y="-20" width="383" height="215.5"/>
                                 <color key="backgroundColor" red="0.97533154489999996" green="0.85251331330000002" blue="0.286155045" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="VkX-6m-Y5e" secondAttribute="height" multiplier="16:9" id="4fn-Td-5UT"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PEB-KE-YCI">
-                                <rect key="frame" x="-4" y="0.0" width="383" height="215.5"/>
+                                <rect key="frame" x="-4" y="-20" width="383" height="215.5"/>
                                 <subviews>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HuF-oq-ao1">
                                         <rect key="frame" x="8" y="192.5" width="367" height="2"/>
@@ -100,25 +100,25 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 영상 주소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEp-5g-A1N">
-                                <rect key="frame" x="16" y="231" width="67" height="21"/>
+                                <rect key="frame" x="16" y="211" width="67" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Pd-Xw-QRa">
-                                <rect key="frame" x="16" y="260" width="343" height="30"/>
+                                <rect key="frame" x="16" y="240" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VRiX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOl-uW-1Ji">
-                                <rect key="frame" x="16" y="304" width="343" height="21"/>
+                                <rect key="frame" x="16" y="284" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dfv-wX-cHt">
-                                <rect key="frame" x="16" y="333" width="343" height="30"/>
+                                <rect key="frame" x="16" y="313" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -152,6 +152,9 @@
                             <constraint firstItem="VkX-6m-Y5e" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="zIz-Jw-OQs"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="adView" destination="VkX-6m-Y5e" id="LvF-JC-Z9K"/>
                         <outlet property="controlView" destination="PEB-KE-YCI" id="15z-Ah-eis"/>

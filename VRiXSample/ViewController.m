@@ -130,10 +130,12 @@
     // playing중에만 호출되도록
     if (_playButton.selected == YES)
     {
+        [_playButton setSelected:NO];
         [_player pause];
         [self stopTicking];
         
-        handler();
+        if(handler != nil)
+            handler();
     }
 }
 
