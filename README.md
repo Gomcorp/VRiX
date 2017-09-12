@@ -166,7 +166,8 @@ VMAP, VAST VRiX
 /// @discussion		포스트롤광고의 곗수를 리턴한다.
 - (NSInteger) postrollCount;
 
-'''
+```
+
 ## License
 
 Gomcorp – (https://www.gomcorp.com/) – kuyoungchang@gomcorp.com
