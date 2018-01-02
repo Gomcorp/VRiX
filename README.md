@@ -58,6 +58,9 @@ VMAP, VAST VRiX
             //TODO: preroll광고 끝난후에 처리할 내용을 구현
         }];
     }
+    else{
+        //TODO: 광고가 없을때 처리
+    }
 }
 ```
 2. Midroll
