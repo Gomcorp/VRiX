@@ -30,8 +30,8 @@ VMAP, VAST VRiX
 ```objc
 #import <VRiX/VRiXManager.h>
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     self.vrixMananger = [[VRiXManager alloc] initWithKey:VRIX_KEY hashKey:VRIX_HASHKEY];
 
     [self.vrixMananger fetchVRiX:[NSURL URLWithString:encodedUrl]
