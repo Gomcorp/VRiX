@@ -228,10 +228,21 @@
         
         [_vrixMananger postrollAtView:_adView completionHandler:^{
             //TODO:...
+            [self processDidEnd];
         }];
     }
+    else
+    {
+        [self processDidEnd];
+    }
+    
 }
 
+- (void) processDidEnd
+{
+    _playButton.selected = NO;
+    _isFetchedData = NO;
+}
 #pragma mark - player handling
 - (void) playMainContent
 {
