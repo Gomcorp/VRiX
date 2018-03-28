@@ -5,7 +5,7 @@
 //  Created by GOMIMAC on 2017. 9. 6..
 //  Copyright © 2017년 GOMIMAC. All rights reserved.
 //
-#define MAIN_CONTENTS_URL   @"http://183.110.11.190/play.gom?bitspec=11534592&userid=&mkey=2b3ebe92328fc654a84da250462d3c80&authinfo=dnp9d3xgbGVwfQ==&preview=0&platform_flag=49&per=&uip=211.178.167.138&vieworder=1&dummy=1503968372&skey=98542e38b47843e0d9f55902b2e9b53e&attr1=10002&service_flag=1&nodeid=12052722&pq=0&contentsid=14862212&start_sec=0&level_flag=4&player=GOM_MINI&userno=0&auth=tv.gomtv.com&end_sec=0&price=0&isfree=1&screen=8&"
+#define MAIN_CONTENTS_URL   @"https://www.rmp-streaming.com/media/bbb-360p.mp4"
 #define VRIX_URL            @"http://ads.vrixon.com/vast/vast.vrix?invenid=KHLOC"
 #define VRIX_KEY            @"574643454"
 #define VRIX_HASHKEY        @"577c3adb3b614c54"
