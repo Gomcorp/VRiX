@@ -110,6 +110,12 @@ VMAP, VAST VRiX
 [self.vrixMananger stopCurrentAD];
 ```
 
+4. Current AD druation,  current time
+```objc
+CGFloat adDruation = [self.vrixMananger getCurrentAdDuration];
+CGFloat adPlaytime = [self.vrixMananger getCurrentAdPlaytime];
+```
+
 #### VRiX Handling methods
 ```objc
 /*!

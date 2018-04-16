@@ -40,6 +40,18 @@ typedef enum _GXAdBreakType GXAdBreakType;
 - (void) stopCurrentAD;
 
 /*!
+ @method            getCurrentAdDuration
+ @discussion        현재 재생중인 광고의 전체 재생시간.
+ */
+- (CGFloat) getCurrentAdDuration;
+
+/*!
+ @method            stopCurrentAD
+ @discussion        현재 재생중인 광고의 play time
+ */
+- (CGFloat) getCurrentAdPlaytime;
+
+/*!
  @method			prerollAtView:completionHandler
  @param				targetView 광고가 재생될 뷰
  @param				handler 광고재생 완료 후 호출될 block
