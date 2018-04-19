@@ -11,7 +11,10 @@
 #define VRIX_HASHKEY        @"577c3adb3b614c54"
 
 #import "ViewController.h"
+
+#import <VRiX/VRiX.h>
 #import <VRiX/VRiXManager.h>
+
 #import <AVKit/AVKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "VideoPlayerView.h"
@@ -38,6 +41,13 @@
     
     [_videoAddressTextField setText:MAIN_CONTENTS_URL];
     [_vrixAddressTextField setText:VRIX_URL];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    [self unregistAdNotification];
 }
 
 
@@ -87,6 +97,8 @@
 {
     if (_vrixMananger && _isFetchedData == NO)
     {
+        [self registAdNotification];
+        
         NSString* encodedUrl = [_vrixAddressTextField.text stringByReplacingOccurrencesOfString:@"|" withString:[@"|" urlEncodedStirng]];
         [_vrixMananger fetchVRiX:[NSURL URLWithString:encodedUrl]
                completionHandler:^(BOOL success, NSError *error)
@@ -153,7 +165,7 @@
     {
         [_adView setHidden:NO];
         [_controlView setHidden:YES];
-        
+    
         [_vrixMananger prerollAtView:_adView completionHandler:^{
             //
             [self playMainContent];
@@ -334,5 +346,84 @@
         block();
     else
         dispatch_async(dispatch_get_main_queue(), block);
+}
+
+#pragma mark - notification
+- (void) registAdNotification
+{
+    [self unregistAdNotification];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(AdReadyToPlay:)
+                                                 name:GTADPlayerReadyToPlayNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(AdPlayBackDidChange:)
+                                                 name:GTADPlayerDidPlayBackChangeNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(AdPlayToEnd:)
+                                                 name:GTADPlayerDidPlayToEndTimeNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(AdStop:)
+                                                 name:GTADPlayerStopByUserNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(AdFailToPlay:)
+                                                 name:GTADPlayerDidFailToPlayNotification
+                                               object:nil];
+}
+
+- (void) unregistAdNotification
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:GTADPlayerReadyToPlayNotification
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:GTADPlayerDidPlayBackChangeNotification
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:GTADPlayerDidPlayToEndTimeNotification
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:GTADPlayerStopByUserNotification
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:GTADPlayerDidFailToPlayNotification
+                                                  object:nil];
+}
+
+- (void) AdReadyToPlay:(id)sender
+{
+    NSLog(@"Ready to Play AD");
+}
+
+- (void) AdPlayBackDidChange:(id)sender
+{
+    NSLog(@"AD is Playing (Duration: %0.1f, playtime: %0.1f)",[self.vrixMananger getCurrentAdDuration], [self.vrixMananger getCurrentAdPlaytime]);
+}
+
+- (void) AdStop:(id)sender
+{
+    NSLog(@"Maybe skipped by User...");
+}
+
+- (void) AdPlayToEnd:(id)sender
+{
+    NSLog(@"AD Completed");
+}
+
+- (void) AdFailToPlay:(id)sender
+{
+    NSLog(@"AD load fail");
 }
 @end

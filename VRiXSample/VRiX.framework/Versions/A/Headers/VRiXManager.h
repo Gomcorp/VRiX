@@ -46,7 +46,7 @@ typedef enum _GXAdBreakType GXAdBreakType;
 - (CGFloat) getCurrentAdDuration;
 
 /*!
- @method            stopCurrentAD
+ @method            getCurrentAdPlayTime
  @discussion        현재 재생중인 광고의 play time
  */
 - (CGFloat) getCurrentAdPlaytime;

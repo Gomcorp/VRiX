@@ -7,6 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+extern NSString *const GTADPlayerDidPlayToEndTimeNotification;
+extern NSString *const GTADPlayerStopByUserNotification;
+extern NSString *const GTADPlayerReadyToPlayNotification;
+extern NSString *const GTADPlayerDidPlayBackChangeNotification;
+extern NSString *const GTADPlayerDidFailToPlayNotification;
 
 @class GTVMAP;
 @interface VRiX : NSObject
