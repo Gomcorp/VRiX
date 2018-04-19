@@ -110,7 +110,8 @@ VMAP, VAST VRiX
 [self.vrixMananger stopCurrentAD];
 ```
 
-5. Get Current AD druation,  current time
+5. AD Player의 상태변화에 따른 Notfication 제공 (Get Current AD druation,  current time 사용법)
+
 ```objc
 - (void) registAdNotification
 {
