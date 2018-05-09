@@ -354,6 +354,11 @@
     [self unregistAdNotification];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(AdPreparePlay:)
+                                                 name:GTADPlayerPrepareToPlayNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(AdReadyToPlay:)
                                                  name:GTADPlayerReadyToPlayNotification
                                                object:nil];
@@ -382,6 +387,10 @@
 - (void) unregistAdNotification
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:GTADPlayerPrepareToPlayNotification
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:GTADPlayerReadyToPlayNotification
                                                   object:nil];
     
@@ -400,6 +409,11 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:GTADPlayerDidFailToPlayNotification
                                                   object:nil];
+}
+
+- (void) AdPreparePlay:(id)sender
+{
+    NSLog(@"AdPreparePlay");
 }
 
 - (void) AdReadyToPlay:(id)sender

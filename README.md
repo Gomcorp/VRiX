@@ -116,6 +116,11 @@ VMAP, VAST VRiX
 - (void) registAdNotification
 {
     [self unregistAdNotification];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(AdPreparePlay:)
+                                                 name:GTADPlayerPrepareToPlayNotification
+                                               object:nil];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(AdReadyToPlay:)
@@ -146,6 +151,10 @@ VMAP, VAST VRiX
 - (void) unregistAdNotification
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:GTADPlayerPrepareToPlayNotification
+                                                  object:nil];
+
+    [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:GTADPlayerReadyToPlayNotification
                                                   object:nil];
 
@@ -164,6 +173,11 @@ VMAP, VAST VRiX
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:GTADPlayerDidFailToPlayNotification
                                                   object:nil];
+}
+
+- (void) AdPreparePlay:(id)sender
+{
+    NSLog(@"AdPreparePlay");
 }
 
 - (void) AdReadyToPlay:(id)sender
