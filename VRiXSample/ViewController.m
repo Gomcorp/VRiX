@@ -423,7 +423,7 @@
 
 - (void) AdPlayBackDidChange:(id)sender
 {
-    NSLog(@"AD is Playing (Duration: %0.1f, playtime: %0.1f)",[self.vrixMananger getCurrentAdDuration], [self.vrixMananger getCurrentAdPlaytime]);
+    NSLog(@"AD is Playing (Duration: %0.1f, playtime: %0.1f)", [self.vrixMananger getCurrentAdDuration], [self.vrixMananger getCurrentAdPlaytime]);
 }
 
 - (void) AdStop:(id)sender
