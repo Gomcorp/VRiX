@@ -11,8 +11,11 @@ enum _GXAdBreakType {
     GXAdBreakTypeNonlinear,
 };
 typedef enum _GXAdBreakType GXAdBreakType;
+
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+
+static NSString* VRIX_IOS_LIBRARY_VERSION = @"3.0.1";
 
 @interface VRiXManager : NSObject
 
