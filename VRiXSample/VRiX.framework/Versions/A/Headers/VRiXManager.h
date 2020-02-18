@@ -64,6 +64,15 @@ static NSString* VRIX_IOS_LIBRARY_VERSION = @"3.0.3";
      completionHandler:(void (^)(void))handler;
 
 /*!
+ @method            prerollAtView:completionHandler
+ @param                targetView 광고가 재생될 뷰
+ @param                completionHandler 광고재생 완료 후 호출될 block
+ @discussion        프리롤 광고를 해당뷰에 재생시킨다.
+ */
+- (void) prerollAtView:(UIView *)targetView
+  completionWithResult:(void (^)(id result))completionHandler;
+
+/*!
  @method			prerollCount
  @discussion		프리롤광고의 곗수를 리턴한다.
  */

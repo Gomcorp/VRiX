@@ -6,7 +6,7 @@
 //  Copyright © 2017년 GOMIMAC. All rights reserved.
 //
 #define MAIN_CONTENTS_URL   @"https://www.rmp-streaming.com/media/bbb-360p.mp4"
-#define VRIX_URL            @"http://ads.vrixon.com/vast/vast.vrix?invenid=KHLOC"
+#define VRIX_URL            @"https://devads.vrixon.com/vast/vast.vrix?invenid=KHLOC"
 #define VRIX_KEY            @"574643454"
 #define VRIX_HASHKEY        @"577c3adb3b614c54"
 
