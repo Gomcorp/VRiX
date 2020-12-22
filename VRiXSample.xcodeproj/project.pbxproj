@@ -60,7 +60,7 @@
 		B378082E1F6618EC00E419F4 /* NSString+URLEncodedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncodedString.h"; sourceTree = "<group>"; };
 		B378082F1F6618EC00E419F4 /* NSString+URLEncodedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncodedString.m"; sourceTree = "<group>"; };
 		B37808311F66376C00E419F4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		F7838954259190DC008FF823 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F78389552591917F008FF823 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,7 @@
 				B3407A821F5FDEAC006FA254 /* VRiXSampleUITests */,
 				B3407A5C1F5FDEAC006FA254 /* Products */,
 				B37808311F66376C00E419F4 /* README.md */,
-				F7838954259190DC008FF823 /* LICENSE */,
+				F78389552591917F008FF823 /* LICENSE.md */,
 			);
 			sourceTree = "<group>";
 		};
