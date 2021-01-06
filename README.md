@@ -3,7 +3,7 @@
 
 [![License][license-image]][license-url]
 [![Version](https://img.shields.io/cocoapods/v/VRiX_iOS.svg?style=flat)](https://cocoapods.org/pods/VRiX_iOS)
-[![Platform](https://img.shields.io/cocoapods/v/VRiX_iOS.svg?style=flat)](http://cocoapods.org/pods/VRiX_iOS)
+[![Platform](https://img.shields.io/cocoapods/p/VRiX_iOS.svg?style=flat)](http://cocoapods.org/pods/VRiX_iOS)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 VMAP, VAST VRiX
